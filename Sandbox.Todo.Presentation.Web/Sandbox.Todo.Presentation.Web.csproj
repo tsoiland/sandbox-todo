@@ -33,7 +33,7 @@
     <StartupObject>Sandbox.Todo.Presentation.Web.MainClass</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Content\ContentRoute.cs" />
+    <Compile Include="ContentRoute.cs" />
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Controllers\ControllerRoute.cs" />
     <Compile Include="DataParser.cs" />

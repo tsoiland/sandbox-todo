@@ -36,7 +36,7 @@
 
                 // Invoke handler
                 var getAndPostParameters = this.dataParser.ActionParameterGatherer(request);
-                var result = this.outerRouter.Invoke(request.RawUrl, getAndPostParameters);
+                var result = this.outerRouter.Invoke(request.RawUrl, getAndPostParameters, context.Response.Redirect);
 
                 // Send http response
                 var byteData = Encoding.Default.GetBytes(result);

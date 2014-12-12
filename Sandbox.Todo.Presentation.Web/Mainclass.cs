@@ -2,7 +2,6 @@
 {
     using Sandbox.Todo.Application;
     using Sandbox.Todo.Persistence.InMemory;
-    using Sandbox.Todo.Presentation.Web.Content;
     using Sandbox.Todo.Presentation.Web.Controllers;
 
     public class MainClass

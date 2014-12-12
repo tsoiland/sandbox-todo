@@ -34,7 +34,7 @@ namespace Sandbox.Todo.Presentation.Web.Controllers
             return actionName;
         }
 
-        public string Invoke(string rawUrl, NameValueCollection arg)
+        public string Invoke(string rawUrl, NameValueCollection arg, Action<string> redirect)
         {
             var actionName = ParseAction(rawUrl);
             var action = this.route[actionName];

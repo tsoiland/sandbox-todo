@@ -1,8 +1,8 @@
 ﻿namespace Sandbox.Todo.Presentation.Web
 {
+    using System;
     using System.Collections.Specialized;
 
-    using Sandbox.Todo.Presentation.Web.Content;
     using Sandbox.Todo.Presentation.Web.Controllers;
 
     public class OuterRouter
@@ -17,11 +17,11 @@
             this.contentRoute = contentRoute;
         }
 
-        public string Invoke(string rawUrl, NameValueCollection arg)
+        public string Invoke(string rawUrl, NameValueCollection arg, Action<string> redirect)
         {
             if (this.controllerRoute.HasMatch(rawUrl))
             {
-                return this.controllerRoute.Invoke(rawUrl, arg);
+                return this.controllerRoute.Invoke(rawUrl, arg, redirect);
             }
 
             return this.contentRoute.Invoke(rawUrl, arg);
