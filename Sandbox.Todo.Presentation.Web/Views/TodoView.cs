@@ -20,7 +20,7 @@
             return @"
                 <h1>Todo list:</h1>
                 <ul>" + 
-                   this.RenderTodos()
+                   this.RenderTodosAsLIs()
                    + @"
                 </ul>
                 <form method='post' action='/contr/add'>
@@ -29,7 +29,7 @@
                 </form>";
         }
 
-        private string RenderTodos()
+        private string RenderTodosAsLIs()
         {
             var sb = new StringBuilder();
             foreach (var todo in todos)

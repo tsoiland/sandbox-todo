@@ -12,13 +12,17 @@
         public string Render()
         {
             return @"
+                <!DOCTYPE html>
                 <html>
                 <head>
                     <title>Todo application</title>
-                    <link rel='stylesheet' type='text/css' href='/Content/style.css' />
+                    <meta http-equiv='Content-Type' content='text/html;charset=utf-8' >
+                    <link rel='stylesheet' type='text/css' href='/Content/style.css' />    
                 </head>
-                <body>" +
-                   this.view.Render() + @"
+                <body>
+                    <div id='container'>" +
+                        this.view.Render() + @"
+                    </div>
                 </body>
                 </html>";
         }
