@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5D89C57D-21FA-423D-8895-F60742B2E952}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sandbox.Todo.Presentation.Web</RootNamespace>
+    <AssemblyName>Sandbox.Todo.Presentation.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Sandbox.Todo.Presentation.Web.MainClass</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Content\ContentRoute.cs" />
+    <Compile Include="Controllers\Controller.cs" />
+    <Compile Include="Controllers\ControllerRoute.cs" />
+    <Compile Include="DataParser.cs" />
+    <Compile Include="Mainclass.cs" />
+    <Compile Include="OuterRouter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\IView.cs" />
+    <Compile Include="Views\Layout.cs" />
+    <Compile Include="Views\Redirect.cs" />
+    <Compile Include="Views\TodoView.cs" />
+    <Compile Include="WebServer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sandbox.Todo.Application.Interface\Sandbox.Todo.Application.Interface.csproj">
+      <Project>{3A4776F1-BF7E-4522-AE9A-A08304F00A68}</Project>
+      <Name>Sandbox.Todo.Application.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sandbox.Todo.Application\Sandbox.Todo.Application.csproj">
+      <Project>{A2E0C61F-3EE4-43E6-AF40-F58BE3FC9CB1}</Project>
+      <Name>Sandbox.Todo.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sandbox.Todo.Persistence.InMemory\Sandbox.Todo.Persistence.InMemory.csproj">
+      <Project>{A6D0EC9B-EC3D-4D43-A8DA-A93361906808}</Project>
+      <Name>Sandbox.Todo.Persistence.InMemory</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\style.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

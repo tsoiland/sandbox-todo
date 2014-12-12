@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.Todo.CompositionRoo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.Todo.Persistence.InMemory", "Sandbox.Todo.Persistence.InMemory\Sandbox.Todo.Persistence.InMemory.csproj", "{A6D0EC9B-EC3D-4D43-A8DA-A93361906808}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.Todo.Presentation.Web", "Sandbox.Todo.Presentation.Web\Sandbox.Todo.Presentation.Web.csproj", "{5D89C57D-21FA-423D-8895-F60742B2E952}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{A6D0EC9B-EC3D-4D43-A8DA-A93361906808}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6D0EC9B-EC3D-4D43-A8DA-A93361906808}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6D0EC9B-EC3D-4D43-A8DA-A93361906808}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D89C57D-21FA-423D-8895-F60742B2E952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D89C57D-21FA-423D-8895-F60742B2E952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D89C57D-21FA-423D-8895-F60742B2E952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D89C57D-21FA-423D-8895-F60742B2E952}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
