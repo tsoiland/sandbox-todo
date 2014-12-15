@@ -1,4 +1,4 @@
-namespace Sandbox.Todo.Presentation.Web
+namespace Sandbox.Todo.CompositionRoot.Web
 {
     using System.Collections.Generic;
     using System.Collections.Specialized;

@@ -1,15 +1,17 @@
 ﻿namespace Sandbox.Todo.Presentation.Web.Views
 {
-    public class Layout : IView
-    {
-        private readonly IView view;
+    using Sandbox.Todo.Presentation.Web.Plumbing;
 
-        public Layout(IView view)
+    public class Layout : View
+    {
+        private readonly View view;
+
+        public Layout(View view)
         {
             this.view = view;
         }
 
-        public string Render()
+        public override string Render()
         {
             return @"
                 <!DOCTYPE html>

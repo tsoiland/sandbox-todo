@@ -1,18 +1,19 @@
-namespace Sandbox.Todo.Presentation.Web.Controllers
+namespace Sandbox.Todo.Presentation.Web.Plumbing
 {
     using System;
     using System.Collections.Generic;
     using System.Collections.Specialized;
+    using System.Linq;
 
-    using Sandbox.Todo.Presentation.Web.Views;
+    using Sandbox.Todo.Presentation.Web.Controllers;
 
-    public class ControllerRoute
+    public class Route
     {
-        private readonly Dictionary<string, Func<NameValueCollection, IView>> route;
+        private readonly Dictionary<string, Func<NameValueCollection, IActionResult>> route;
 
-        public ControllerRoute(Controller controller)
+        public Route(Controller controller)
         {
-            this.route = new Dictionary<string, Func<NameValueCollection, IView>>
+            this.route = new Dictionary<string, Func<NameValueCollection, IActionResult>>
                               {
                                   { "index", controller.Index },
                                   { "add", controller.Add },
@@ -39,7 +40,13 @@ namespace Sandbox.Todo.Presentation.Web.Controllers
             var actionName = ParseAction(rawUrl);
             var action = this.route[actionName];
             var view = action.Invoke(arg);
-            return new Layout(view).Render();
+            return view.Perform(rawUrl, this, redirect);
+        }
+
+        public string ReverseRoute(Func<NameValueCollection, IActionResult> action)
+        {
+            return "/contr/" + this.route.Single(r => r.Value == action).Key;
+
         }
     }
 }

@@ -1,12 +1,12 @@
 ﻿namespace Sandbox.Todo.Presentation.Web.Views
 {
     using System.Collections.Generic;
-    using System.Linq;
     using System.Text;
 
     using Sandbox.Todo.Application.Interface;
+    using Sandbox.Todo.Presentation.Web.Plumbing;
 
-    public class TodoView : IView
+    public class TodoView : View
     {
         private readonly IList<TodoDto> todos;
 
@@ -15,7 +15,7 @@
             this.todos = todos;
         }
 
-        public string Render()
+        public override string Render()
         {
             return @"
                 <h1>Todo list:</h1>

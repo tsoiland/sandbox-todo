@@ -4,6 +4,7 @@
     using System.Collections.Specialized;
 
     using Sandbox.Todo.Application.Interface;
+    using Sandbox.Todo.Presentation.Web.Plumbing;
     using Sandbox.Todo.Presentation.Web.Views;
 
     public class Controller
@@ -15,44 +16,27 @@
             this.todoService = todoService;
         }
 
-        public IView Index(NameValueCollection arg)
+        public IActionResult Index(NameValueCollection arg)
         {
             var todos = this.todoService.GetAll();
-            return new TodoView(todos);
+            return new Layout(new TodoView(todos));
         }
 
-        public IView Add(NameValueCollection arg)
+        public IActionResult Add(NameValueCollection arg)
         {
             this.todoService.Add(arg["text"]);
-            return new Redirect(() => this.Index(arg));
+            return new Redirect(this.Index);
         }
 
-        public IView Remove(NameValueCollection arg)
+        public IActionResult Remove(NameValueCollection arg)
         {
             this.todoService.Remove(new TodoId(new Guid(arg["id"])));
-            return new Redirect(() => this.Index(arg));
+            return new Redirect(this.Index);
         }
 
-        public IView SetPriority(NameValueCollection arg)
+        public IActionResult SetPriority(NameValueCollection arg)
         {
-            return new Redirect(() => this.Index(arg));
-        }
-
-        public IView css(NameValueCollection arg)
-        {
-            return new CssView();
-        }
-    }
-
-    public class CssView : IView
-    {
-        public string Render()
-        {
-            return @"
-                body {
-                    background-color: red;
-                }
-            ";
+            return new Redirect(this.Index);
         }
     }
 }

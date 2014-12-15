@@ -1,7 +1,9 @@
-﻿namespace Sandbox.Todo.Presentation.Web
+﻿namespace Sandbox.Todo.CompositionRoot.Web
 {
     using System.Net;
     using System.Text;
+
+    using Sandbox.Todo.Presentation.Web.Plumbing;
 
     public class WebServer
     {
@@ -39,7 +41,7 @@
                 var result = this.outerRouter.Invoke(request.RawUrl, getAndPostParameters, context.Response.Redirect);
 
                 // Send http response
-                var byteData = Encoding.Default.GetBytes(result);
+                var byteData = Encoding.Default.GetBytes((string)result);
                 context.Response.OutputStream.Write(byteData, 0, byteData.Length);
                 context.Response.OutputStream.Close();
             }

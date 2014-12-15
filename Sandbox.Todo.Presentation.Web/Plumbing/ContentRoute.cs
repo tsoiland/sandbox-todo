@@ -1,6 +1,5 @@
-namespace Sandbox.Todo.Presentation.Web
+namespace Sandbox.Todo.Presentation.Web.Plumbing
 {
-    using System;
     using System.Collections.Specialized;
     using System.IO;
 
