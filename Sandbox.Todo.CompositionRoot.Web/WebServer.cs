@@ -8,12 +8,12 @@
     public class WebServer
     {
         private readonly DataParser dataParser;
-        private readonly OuterRouter outerRouter;
+        private readonly Route route;
 
-        public WebServer(DataParser dataParser, OuterRouter outerRouter)
+        public WebServer(DataParser dataParser, Route route)
         {
             this.dataParser = dataParser;
-            this.outerRouter = outerRouter;
+            this.route = route;
         }
 
         public void Run(int portNumber)
@@ -38,7 +38,7 @@
 
                 // Invoke handler
                 var getAndPostParameters = this.dataParser.ActionParameterGatherer(request);
-                var result = this.outerRouter.Invoke(request.RawUrl, getAndPostParameters, context.Response.Redirect);
+                var result = this.route.Invoke(request.RawUrl, getAndPostParameters, context.Response.Redirect);
 
                 // Send http response
                 var byteData = Encoding.Default.GetBytes((string)result);

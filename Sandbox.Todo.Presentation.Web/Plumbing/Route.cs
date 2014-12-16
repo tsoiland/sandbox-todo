@@ -6,6 +6,7 @@ namespace Sandbox.Todo.Presentation.Web.Plumbing
     using System.Linq;
 
     using Sandbox.Todo.Presentation.Web.Controllers;
+    using Sandbox.Todo.Presentation.Web.Plumbing.ActionResults;
 
     public class Route
     {
@@ -14,30 +15,19 @@ namespace Sandbox.Todo.Presentation.Web.Plumbing
         public Route(Controller controller)
         {
             this.route = new Dictionary<string, Func<NameValueCollection, IActionResult>>
-                              {
-                                  { "index", controller.Index },
-                                  { "add", controller.Add },
-                                  { "remove", controller.Remove },
-                                  { "setpriority", controller.SetPriority }
-                              };
-        }
+                {
+                    { "/controller/index", controller.Index },
+                    { "/controller/add", controller.Add },
+                    { "/controller/remove", controller.Remove },
+                    { "/controller/setpriority", controller.SetPriority },
 
-        public bool HasMatch(string rawUrl)
-        {
-            var actionName = ParseAction(rawUrl);
-            return actionName != null && this.route.ContainsKey(actionName);
-        }
-
-        private static string ParseAction(string rawUrl)
-        {
-            var a = rawUrl.Split('?')[0].Split('/');
-            var actionName = a[2];
-            return actionName;
+                    { "/Content/style.css", _ => new Content()}
+                };
         }
 
         public string Invoke(string rawUrl, NameValueCollection arg, Action<string> redirect)
         {
-            var actionName = ParseAction(rawUrl);
+            var actionName = rawUrl.Split('?')[0];
             var action = this.route[actionName];
             var view = action.Invoke(arg);
             return view.Perform(rawUrl, this, redirect);
@@ -45,7 +35,7 @@ namespace Sandbox.Todo.Presentation.Web.Plumbing
 
         public string ReverseRoute(Func<NameValueCollection, IActionResult> action)
         {
-            return "/contr/" + this.route.Single(r => r.Value == action).Key;
+            return this.route.Single(r => r.Value == action).Key;
 
         }
     }

@@ -4,7 +4,7 @@
     using System.Text;
 
     using Sandbox.Todo.Application.Interface;
-    using Sandbox.Todo.Presentation.Web.Plumbing;
+    using Sandbox.Todo.Presentation.Web.Plumbing.ActionResults;
 
     public class TodoView : View
     {
@@ -23,7 +23,7 @@
                    this.RenderTodosAsLIs()
                    + @"
                 </ul>
-                <form method='post' action='/contr/add'>
+                <form method='post' action='/controller/add'>
                     <input type='text' name='text' autofocus />
                     <input type='submit' value='Add' />
                 </form>";
@@ -34,7 +34,7 @@
             var sb = new StringBuilder();
             foreach (var todo in todos)
             {
-                sb.AppendFormat("<li>{0}<a href='/contr/remove?id={1}'>X</a></li>", todo.Text, todo.Id);
+                sb.AppendFormat("<li>{0}<a href='/controller/remove?id={1}'>X</a></li>", todo.Text, todo.Id);
                 sb.AppendLine();
             }
             return sb.ToString();

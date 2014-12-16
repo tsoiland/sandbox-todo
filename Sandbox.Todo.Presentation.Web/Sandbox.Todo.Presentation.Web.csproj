@@ -35,13 +35,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Controllers\Controller.cs" />
-    <Compile Include="Plumbing\Content.cs" />
-    <Compile Include="Plumbing\ContentRoute.cs" />
+    <Compile Include="Plumbing\ActionResults\Content.cs" />
+    <Compile Include="Plumbing\ActionResults\Redirect.cs" />
+    <Compile Include="Plumbing\ActionResults\View.cs" />
     <Compile Include="Plumbing\Route.cs" />
     <Compile Include="Plumbing\IActionResult.cs" />
-    <Compile Include="Plumbing\OuterRouter.cs" />
-    <Compile Include="Plumbing\Redirect.cs" />
-    <Compile Include="Plumbing\View.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Layout.cs" />
     <Compile Include="Views\TodoView.cs" />
