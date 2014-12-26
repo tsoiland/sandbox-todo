@@ -22,8 +22,9 @@ namespace Sandbox.Todo.Presentation.Web.Plumbing
                     { "/controller/remove", controller.Remove },
                     { "/controller/setpriorityform", controller.SetPriorityForm },
                     { "/controller/setpriority", controller.SetPriority },
-
-                    { "/Content/style.css", _ => new Content()}
+                    
+                    { "/content/style.css", _ => new Content()},
+                    { "/content/script.js", _ => new Content()}
                 };
         }
 

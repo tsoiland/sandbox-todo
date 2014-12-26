@@ -18,8 +18,9 @@
                 <html>
                 <head>
                     <title>Todo application</title>
-                    <meta http-equiv='Content-Type' content='text/html;charset=utf-8' >
-                    <link rel='stylesheet' type='text/css' href='/Content/style.css' />    
+                    <meta http-equiv='Content-Type' content='text/html;charset=utf-8' />
+                    <link rel='stylesheet' type='text/css' href='/content/style.css' />  
+                    <script type='text/javascript' src='/content/script.js'></script>                    
                 </head>
                 <body>
                     <div id='container'>" +
