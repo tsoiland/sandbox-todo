@@ -20,7 +20,7 @@
         public IActionResult Index(NameValueCollection arg)
         {
             var todos = this.todoService.GetAll();
-            return new Layout(new TodoView(todos));
+            return new TodoView(todos);
         }
 
         public IActionResult Add(NameValueCollection arg)
