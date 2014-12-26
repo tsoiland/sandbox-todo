@@ -38,11 +38,11 @@
 
                 // Invoke handler
                 var getAndPostParameters = this.dataParser.ActionParameterGatherer(request);
-                var result = this.route.Invoke(request.RawUrl, getAndPostParameters, context.Response.Redirect);
+                var stringResponse = this.route.Invoke(request.RawUrl, getAndPostParameters, context.Response.Redirect);
 
                 // Send http response
-                var byteData = Encoding.Default.GetBytes((string)result);
-                context.Response.OutputStream.Write(byteData, 0, byteData.Length);
+                var byteResponse = Encoding.Default.GetBytes(stringResponse);
+                context.Response.OutputStream.Write(byteResponse, 0, byteResponse.Length);
                 context.Response.OutputStream.Close();
             }
         }

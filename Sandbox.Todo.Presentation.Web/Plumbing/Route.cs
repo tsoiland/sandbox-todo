@@ -7,6 +7,7 @@ namespace Sandbox.Todo.Presentation.Web.Plumbing
 
     using Sandbox.Todo.Presentation.Web.Controllers;
     using Sandbox.Todo.Presentation.Web.Plumbing.ActionResults;
+    using Sandbox.Todo.Presentation.Web.Views;
 
     public class Route
     {
@@ -29,8 +30,15 @@ namespace Sandbox.Todo.Presentation.Web.Plumbing
         {
             var actionName = rawUrl.Split('?')[0];
             var action = this.route[actionName];
-            var view = action.Invoke(arg);
-            return view.Perform(rawUrl, this, redirect);
+            try
+            {
+                var view = action.Invoke(arg);
+                return view.Perform(rawUrl, this, redirect);
+            }
+            catch (Exception e)
+            {
+                return new ErrorView(e).Render();
+            }
         }
 
         public string ReverseRoute(Func<NameValueCollection, IActionResult> action)
