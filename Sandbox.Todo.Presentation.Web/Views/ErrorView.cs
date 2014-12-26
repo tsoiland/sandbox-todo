@@ -15,7 +15,10 @@ namespace Sandbox.Todo.Presentation.Web.Views
 
         public override string Render()
         {
-            return this.exception.Message;
+            return @"
+                <h2>An error has occured</h2>
+                <p>" + this.exception.Message + @"</p>
+                <p>" + this.exception.StackTrace + "</p>";
         }
     }
 }

@@ -20,6 +20,7 @@ namespace Sandbox.Todo.Presentation.Web.Plumbing
                     { "/controller/index", controller.Index },
                     { "/controller/add", controller.Add },
                     { "/controller/remove", controller.Remove },
+                    { "/controller/setpriorityform", controller.SetPriorityForm },
                     { "/controller/setpriority", controller.SetPriority },
 
                     { "/Content/style.css", _ => new Content()}
@@ -44,7 +45,6 @@ namespace Sandbox.Todo.Presentation.Web.Plumbing
         public string ReverseRoute(Func<NameValueCollection, IActionResult> action)
         {
             return this.route.Single(r => r.Value == action).Key;
-
         }
     }
 }

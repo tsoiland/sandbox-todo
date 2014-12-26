@@ -7,6 +7,9 @@
         public TodoId(Guid guid) : base(guid)
         {}
 
+        public TodoId(string guid) : base(guid)
+        {}
+
         public TodoId()
         {}
     }

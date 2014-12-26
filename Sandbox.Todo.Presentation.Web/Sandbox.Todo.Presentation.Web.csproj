@@ -40,8 +40,13 @@
     <Compile Include="Plumbing\ActionResults\View.cs" />
     <Compile Include="Plumbing\Route.cs" />
     <Compile Include="Plumbing\IActionResult.cs" />
+    <Compile Include="Plumbing\ViewHelpers\Html.cs" />
+    <Compile Include="Plumbing\ViewHelpers\SelectListOption.cs" />
+    <Compile Include="Plumbing\ViewHelpers\SelectListValues.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ErrorView.cs" />
     <Compile Include="Views\Layout.cs" />
+    <Compile Include="Views\SetPriorityView.cs" />
     <Compile Include="Views\TodoView.cs" />
   </ItemGroup>
   <ItemGroup>

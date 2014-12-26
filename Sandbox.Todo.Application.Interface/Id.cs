@@ -6,6 +6,11 @@
     {
         private readonly Guid guid;
 
+        protected Id(string guid)
+        {
+            this.guid = new Guid(guid);
+        }
+
         protected Id(Guid guid)
         {
             this.guid = guid;

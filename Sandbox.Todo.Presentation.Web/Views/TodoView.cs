@@ -34,7 +34,13 @@
             var sb = new StringBuilder();
             foreach (var todo in todos)
             {
-                sb.AppendFormat("<li>{0}<a href='/controller/remove?id={1}'>X</a></li>", todo.Text, todo.Id);
+                sb.AppendFormat(@"
+                    <li>
+                        {0}
+                        <a href='/controller/remove?id={1}'>X</a>
+                        <a href='/controller/setpriorityform?id={2}'>Set priority</a>
+                    </li>", 
+                    todo.Text, todo.Id, todo.Id);
                 sb.AppendLine();
             }
             return sb.ToString();
