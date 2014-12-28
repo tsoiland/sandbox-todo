@@ -2,6 +2,7 @@
 {
     using System;
 
+    [Serializable]
     public abstract class Id
     {
         private readonly Guid guid;

@@ -2,6 +2,7 @@
 {
     using System;
 
+    [Serializable]
     public class TodoId : Id
     {
         public TodoId(Guid guid) : base(guid)

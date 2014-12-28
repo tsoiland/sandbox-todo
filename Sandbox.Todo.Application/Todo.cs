@@ -1,5 +1,7 @@
 ﻿namespace Sandbox.Todo.Application
 {
+    using System;
+
     using Sandbox.Todo.Application.Interface;
 
     /// <summary>
@@ -15,6 +17,7 @@
     /// 
     /// The action is usually tracked by a short textual reminder.
     /// </summary>
+    [Serializable]
     public class Todo
     {
         public Todo()
