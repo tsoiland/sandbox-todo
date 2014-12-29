@@ -16,7 +16,7 @@
 
             var url = sut.ReverseRoute(controller.Index);
 
-            Assert.AreEqual("/contr/index", url);
+            Assert.AreEqual("/controller/index", url);
         }
     }
 }

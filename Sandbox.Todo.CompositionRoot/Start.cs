@@ -14,13 +14,16 @@
         public static void Main()
         {
             // Resolve dependencies
+            var secondaryStorage = new SecondaryStorage(new Serializer());
+            var unitOfWork = new UnitOfWork(secondaryStorage);
+            var todoService = new TodoServiceAtomic(new TodoService(new AtomicTodoRepository(unitOfWork, secondaryStorage)), unitOfWork);
+
             var commandLine = 
                 new CommandLine(
                     new Interpreter(
                         new Route(
                             new Controller(
-                                new TodoService(
-                                    new InMemoryTodoRepository())))));
+                                todoService))));
 
             // Start command line
             commandLine.Start();

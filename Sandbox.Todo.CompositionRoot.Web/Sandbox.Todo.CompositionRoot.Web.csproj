@@ -50,10 +50,6 @@
       <Project>{A2E0C61F-3EE4-43E6-AF40-F58BE3FC9CB1}</Project>
       <Name>Sandbox.Todo.Application</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sandbox.Todo.Persistence.Atomic\Sandbox.Todo.Persistence.Atomic.csproj">
-      <Project>{97CFCE05-4EC5-449F-AC69-BB584F48762A}</Project>
-      <Name>Sandbox.Todo.Persistence.Atomic</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Sandbox.Todo.Persistence.InMemory\Sandbox.Todo.Persistence.InMemory.csproj">
       <Project>{A6D0EC9B-EC3D-4D43-A8DA-A93361906808}</Project>
       <Name>Sandbox.Todo.Persistence.InMemory</Name>

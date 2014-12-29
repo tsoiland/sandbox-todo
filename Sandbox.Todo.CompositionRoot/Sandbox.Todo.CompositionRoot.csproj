@@ -45,10 +45,6 @@
       <Project>{3A4776F1-BF7E-4522-AE9A-A08304F00A68}</Project>
       <Name>Sandbox.Todo.Application.Interface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sandbox.Todo.Application.Tests\Sandbox.Todo.Application.Tests.csproj">
-      <Project>{4A371618-FAF4-4022-9569-3270399410CE}</Project>
-      <Name>Sandbox.Todo.Application.Tests</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Sandbox.Todo.Application\Sandbox.Todo.Application.csproj">
       <Project>{A2E0C61F-3EE4-43E6-AF40-F58BE3FC9CB1}</Project>
       <Name>Sandbox.Todo.Application</Name>

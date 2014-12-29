@@ -1,9 +1,8 @@
-namespace Sandbox.Todo.Persistence.InMemory
+namespace Sandbox.Todo.Application.Tests
 {
     using System.Collections.Generic;
     using System.Linq;
 
-    using Sandbox.Todo.Application;
     using Sandbox.Todo.Application.Interface;
 
     public class InMemoryTodoRepository : ITodoRepository

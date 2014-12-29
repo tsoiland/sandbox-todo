@@ -1,4 +1,4 @@
-﻿namespace Sandbox.Todo.Persistence.Atomic
+﻿namespace Sandbox.Todo.Persistence.InMemory
 {
     using System.IO;
     using System.Runtime.Serialization.Formatters.Binary;

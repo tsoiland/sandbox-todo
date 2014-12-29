@@ -5,7 +5,6 @@
     using NUnit.Framework;
 
     using Sandbox.Todo.Application.Interface;
-    using Sandbox.Todo.Persistence.InMemory;
 
     [TestFixture]
     public class TodoServiceTests

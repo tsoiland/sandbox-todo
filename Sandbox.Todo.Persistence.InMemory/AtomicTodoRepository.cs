@@ -1,6 +1,5 @@
-﻿namespace Sandbox.Todo.Persistence.Atomic
+﻿namespace Sandbox.Todo.Persistence.InMemory
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
 
