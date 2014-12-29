@@ -34,15 +34,7 @@
 
         public Todo Get(TodoId id)
         {
-            // Fetch aggregate
-            var o = this.secondaryStorage.Read(id.Guid);
-            var aggregate = (Todo)o;
-
-            // Flag as dirty
-            this.unitOfWork.Add(aggregate.Id.Guid, aggregate);
-
-            // Return
-            return aggregate;
+            return (Todo)this.secondaryStorage.Read(id.Guid);
         }
     }
 }

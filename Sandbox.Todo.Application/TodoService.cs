@@ -12,6 +12,8 @@
     {
         private readonly ITodoRepository todoRepository;
 
+        private IUnitOfWork unitOfWork;
+
         public TodoService(ITodoRepository todoRepository)
         {
             this.todoRepository = todoRepository;
@@ -48,6 +50,7 @@
         {
             var todo = this.todoRepository.Get(todoId);
             todo.Priority = priority;
+            this.unitOfWork.Modified(todo.Id.Guid, todo);
         }
     }
 }

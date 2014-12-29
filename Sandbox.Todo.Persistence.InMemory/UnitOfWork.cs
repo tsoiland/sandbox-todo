@@ -4,7 +4,9 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public class UnitOfWork
+    using Sandbox.Todo.Application;
+
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly List<KeyValuePair<Guid, object>> pendingSaveEntries;
         private readonly SecondaryStorage secondaryStorage;
@@ -44,6 +46,11 @@
             {
                 this.secondaryStorage.Remove(id);
             }
+        }
+
+        public void Modified(Guid id, object o)
+        {
+            this.Add(id, o);
         }
     }
 }
